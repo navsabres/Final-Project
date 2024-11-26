@@ -37,6 +37,46 @@ class User:
             workout_number += 1  # Increment the workout number after printing each workout
         print(f"Total Calories Burned Across All Workouts: {self.calories}")
 
+#Option to display exercises for new users
+def show_available_exercises():
+    """
+    Displays all available exercises, grouped by muscle group
+    """
+    try:
+        with open('exercise_database.json', 'r') as file:
+            data = json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        print("Error: Could not load exercise database.")
+        return
+
+    print("\nAvailable Exercises:")
+    for muscle_group, exercises in data.items():
+        print(f"\n{muscle_group.capitalize()}:")
+        for e in exercises:
+            print(f"  - {e['name']} ({e['duration']} min, {e['calories_burned_per_minute']} cal/min)")
+
+#Suggestions based on muscle groups
+def workout_suggester(muscle_group, user_weight):
+    """
+    Suggest exercises based on the muscle group. Personalized by user's weight.
+    """
+    try:
+        with open('exercise_database.json', 'r') as file:
+            data = json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        print("Error: Could not load exercise database.")
+        return
+
+    exercises = data.get(muscle_group)
+    if not exercises:
+        print(f"No exercises found for {muscle_group}. Try Legs, Upper Body, or Core.")
+        return
+
+    print(f"\nExercises for {muscle_group} (Weight: {user_weight} kg):")
+    for e in exercises:
+        cal_adjusted = e['calories_burned_per_minute'] * (user_weight / 70)
+        print(f"- {e['name']}: {e['duration']} min, {cal_adjusted:.2f} cal/min")
+
 def log_workout(user):
     try:
         with open('exercise_database.json', 'r') as file:
