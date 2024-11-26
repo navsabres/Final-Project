@@ -205,3 +205,6 @@ def main():
             break
         else:
             print("Invalid. Please enter 1, 2, 3, or q.")
+            
+if __name__ == "__main__":
+    main()
