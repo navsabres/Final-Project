@@ -121,16 +121,3 @@ def log_workout(user):
         
         if not found:
             print(f"Error: Exercise '{exercise_name}' not found. Please try again.")
-  #Need to write code that collects data from the user and logs it into a database. We want to collect their name, exercise, duration, etc.
-#Planned Unit Test:
-#Test that the workout suggester function works as intended
-#Test that the log workout function works as intended
-#Test that the main function works as intended
-  #Specifically I will test that the main function starts the program up and that the user can choose to log a workout or get workout suggestions
-#Test that the User class works as intended
-  #Specifically I will test that the User class has the correct attributes and methods and properly tracks a user progress
-#Test that the Workout class works as intended
-  #Specifically I will test that the Workout class to make sure workouts are correctly recorded
-#Test that the Exercise class works as intended
-  #Specifically I will test that the Exercise class by inputting the correct attributes from a database of exercises that we will create later on.
-#We have to either scrape a list of exercises online or create our own list of exercises that we can use to test and create the program
