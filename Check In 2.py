@@ -37,6 +37,32 @@ class User:
             workout_number += 1  # Increment the workout number after printing each workout
         print(f"Total Calories Burned Across All Workouts: {self.calories}")
 
+class Workout:
+    def __init__(self):
+        self.exercises = []  # List of exercises
+        self.total_duration = 0
+        self.total_calories_burned = 0
+
+    def add_exercise(self, exercise):
+        """Add an exercise to the workout."""
+        self.exercises.append(exercise)
+        self.total_duration += exercise['duration']
+        self.total_calories_burned += exercise['calories_burned']
+
+class Exercise:
+    def __init__(self, name, muscle_group, duration, calories_burned_per_minute):
+        self.name = name
+        self.muscle_group = muscle_group
+        self.duration = duration
+        self.calories_burned_per_minute = calories_burned_per_minute
+
+    def calculate_calories_burned(self, weight):
+        """
+        Calculating the total calories burned
+        """
+        weight_factor = weight / 70 
+        return self.duration * self.calories_burned_per_minute * weight_factor
+
 #Option to display exercises for new users
 def show_available_exercises():
     """
@@ -125,6 +151,17 @@ def log_workout(user):
         
         if not found:
             print(f"Error: Exercise '{exercise_name}' not found. Please try again.")
+            
+def get_valid_weight():
+    """Prompt the user to input a valid weight in kg and return the weight."""
+    while True:
+        user_input = input("Please enter your weight in kg (e.g., 70.5): ").strip()
+        
+        
+        if user_input.replace('.', '', 1).isdigit() and user_input.count('.') < 2:
+            return float(user_input)
+        
+        print("Invalid input. Please enter a valid number (e.g., 70.5).")
 
 def main():
     users = {}  #Storing User objects by name
