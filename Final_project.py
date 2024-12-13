@@ -133,7 +133,7 @@ class User:
         }
         self.progress_history.append(progress)
 
-    def set_goal(self, goal_type: str, target: float, deadline: datetime.now().date()):
+    def set_goal(self, goal_type: str, target: float, deadline: datetime):
         """Set a fitness goal for the user."""
         self.goals[goal_type] = {
             "target": target,
@@ -524,4 +524,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
