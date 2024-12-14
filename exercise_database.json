@@ -1,14 +1,92 @@
 {
-    "Legs": [
-        {"name": "Squats", "duration": 10, "calories_burned_per_minute": 8.0},
-        {"name": "Lunges", "duration": 12, "calories_burned_per_minute": 6.5}
-    ],
     "Upper Body": [
-        {"name": "Push-ups", "duration": 15, "calories_burned_per_minute": 7.0},
-        {"name": "Pull-ups", "duration": 8, "calories_burned_per_minute": 9.5}
+        {
+            "name": "Push-ups",
+            "duration": 10,
+            "calories_burned_per_minute": 8.0,
+            "intensity": "medium",
+            "equipment_needed": ["mat"]
+        },
+        {
+            "name": "Pull-ups",
+            "duration": 8,
+            "calories_burned_per_minute": 10.0,
+            "intensity": "high",
+            "equipment_needed": ["pull-up bar"]
+        },
+        {
+            "name": "Bench Press",
+            "duration": 15,
+            "calories_burned_per_minute": 7.5,
+            "intensity": "high",
+            "equipment_needed": ["bench", "barbell", "weights"]
+        },
+        {
+            "name": "Dumbbell Rows",
+            "duration": 12,
+            "calories_burned_per_minute": 6.5,
+            "intensity": "medium",
+            "equipment_needed": ["dumbbells"]
+        }
+    ],
+    "Legs": [
+        {
+            "name": "Squats",
+            "duration": 12,
+            "calories_burned_per_minute": 9.0,
+            "intensity": "high",
+            "equipment_needed": []
+        },
+        {
+            "name": "Lunges",
+            "duration": 10,
+            "calories_burned_per_minute": 7.0,
+            "intensity": "medium",
+            "equipment_needed": []
+        },
+        {
+            "name": "Leg Press",
+            "duration": 15,
+            "calories_burned_per_minute": 8.0,
+            "intensity": "high",
+            "equipment_needed": ["leg press machine"]
+        },
+        {
+            "name": "Calf Raises",
+            "duration": 8,
+            "calories_burned_per_minute": 5.0,
+            "intensity": "low",
+            "equipment_needed": []
+        }
     ],
     "Core": [
-        {"name": "Plank", "duration": 5, "calories_burned_per_minute": 5.0},
-        {"name": "Crunches", "duration": 10, "calories_burned_per_minute": 4.0}
+        {
+            "name": "Plank",
+            "duration": 5,
+            "calories_burned_per_minute": 6.0,
+            "intensity": "medium",
+            "equipment_needed": ["mat"]
+        },
+        {
+            "name": "Crunches",
+            "duration": 8,
+            "calories_burned_per_minute": 5.5,
+            "intensity": "medium",
+            "equipment_needed": ["mat"]
+        },
+        {
+            "name": "Russian Twists",
+            "duration": 10,
+            "calories_burned_per_minute": 7.0,
+            "intensity": "medium",
+            "equipment_needed": ["mat", "dumbbell"]
+        },
+        {
+            "name": "Leg Raises",
+            "duration": 8,
+            "calories_burned_per_minute": 6.5,
+            "intensity": "high",
+            "equipment_needed": ["mat"]
+        }
     ]
 }
