@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INST377 - Lab 4</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: lightblue;
+        }
+        .section {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid black;
+            display: inline-block;
+            background-color: white;
+        }
+        button {
+            background-color: purple;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>INST377 - Lab 4</h1>
+
+    <div class="section">
+        <label for="nameInput">Name:</label>
+        <input type="text" id="nameInput" required>
+        <button onclick="alertMe()">Alert Me!</button>
+    </div>
+
+    <div class="section">
+        <button onclick="changeColor()">Change Color</button>
+    </div>
+
+    <div class="section">
+        <label for="textInput">Text Tester:</label>
+        <input type="text" id="textInput">
+        <button onclick="validateText()">Validate Text</button>
+    </div>
+
+    <div class="section">
+        <button onclick="addText()">Add Text</button>
+    </div>
+
+    <script>
+        function alertMe() {
+            let name = document.getElementById("nameInput").value;
+            if (name.trim() !== "") {
+                alert("Hi " + name + "!");
+            } else {
+                alert("Please enter a name.");
+            }
+        }
+
+        function changeColor() {
+            if (document.body.style.backgroundColor === 'lightblue') {
+                document.body.style.backgroundColor = 'lightgreen';
+            } else {
+                document.body.style.backgroundColor = 'lightblue';
+            }
+        }
+
+        function validateText() {
+            let text = document.getElementById("textInput").value;
+            let validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            if (validation.test(text)) {
+                alert("Special characters are not allowed!");
+            } else {
+                alert("Text is valid.");
+            }
+        }
+
+        function addText() {
+            let heading = document.querySelector("h1");
+            heading.innerText += " Add Text";
+        }
+    </script>
+</body>
+</html>
